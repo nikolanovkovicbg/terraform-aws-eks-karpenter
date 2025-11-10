@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: arm-pod
+spec:
+  nodeSelector:
+    kubernetes.io/arch: arm64
+    karpenter.sh/capacity-type: on-demand
+  containers:
+    - name: nginx
+      image: nginx
